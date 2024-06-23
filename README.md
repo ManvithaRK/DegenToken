@@ -6,6 +6,27 @@ DegenToken is an ERC20 token deployed on the Avalanche Fuji testnet. It provides
 ## Description
 
 DegenToken is an ERC20 token deployed on the Avalanche Fuji testnet. The token allows users to mint, burn, transfer, and redeem tokens for concert tickets. The project uses OpenZeppelin libraries to ensure security and standard compliance. It includes a basic ticketing system where users can redeem their tokens for specific concert tickets.
+DegenToken is designed to operate on the Avalanche Fuji testnet, enabling a decentralized and secure way to manage concert ticket sales. The smart contract allows the owner to mint new tokens and users to burn their tokens. Users can transfer tokens between accounts and redeem tokens for specific concert tickets. The ticketing system supports different concert tickets, each with a set price and available quantity.
+
+## Features
+
+1. **Minting**: The contract owner can mint new DegenTokens to a specified address. This is useful for initially distributing tokens or rewarding users.
+   
+2. **Burning**: Users can burn their DegenTokens, reducing the total supply. This feature is commonly used to implement deflationary mechanics or manage the token supply actively.
+   
+3. **Transferring**: Users can transfer DegenTokens to other addresses. This standard ERC20 functionality facilitates peer-to-peer transactions and integrations with other dApps.
+   
+4. **Redeeming**: Users can redeem their DegenTokens for concert tickets. The contract manages a ticketing system where each type of concert ticket has a specific price in DegenTokens and a limited quantity. Users can burn their tokens to receive a ticket, which is tracked in the contract.
+
+The contract initializes with predefined ticket options, including:
+- Weeknd concert general ticket (Price: 250 DGN, Available: 10)
+- Justin Bieber concert general ticket (Price: 300 DGN, Available: 8)
+- Kanye West VIP ticket (Price: 1000 DGN, Available: 4)
+
+Users can check their redeemed tickets via the `ticket_redeemed` mapping, which links their address to the specific ticket they have redeemed.
+
+The smart contract ensures that users have enough balance to redeem tickets and that tickets are still available before allowing the redemption. This prevents overselling and ensures fair distribution of tickets.
+
 
 ## Getting Started
 
